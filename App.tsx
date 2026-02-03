@@ -260,12 +260,12 @@ const App: React.FC = () => {
             </a>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((service) => (
-              <div key={service.id} className="group relative bg-white/5 border border-white/10 p-8 rounded-[2.5rem] hover:bg-white hover:border-white transition-all duration-500 overflow-hidden">
+              <div key={service.id} className="group relative bg-white/5 border border-white/10 p-8 rounded-[2.5rem] hover:bg-white hover:border-white hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-500 overflow-hidden cursor-default">
                 <div className="relative z-10">
-                  <div className="w-14 h-14 bg-green-500/10 rounded-2xl flex items-center justify-center text-green-400 mb-8 group-hover:bg-green-600 group-hover:text-white transition-all duration-500 overflow-hidden">
-                    <div className="transition-all duration-500 group-hover:animate-subtle-pulse">
+                  <div className="w-16 h-16 bg-green-500/10 rounded-2xl flex items-center justify-center text-green-400 mb-8 group-hover:bg-green-600 group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all duration-500 transform">
+                    <div className="transition-transform duration-500 group-hover:scale-110">
                       {service.icon}
                     </div>
                   </div>
@@ -274,8 +274,9 @@ const App: React.FC = () => {
                     {service.problem} SIPC approach: {service.approach}
                   </p>
                 </div>
-                <div className="absolute -bottom-2 -right-2 text-white/5 group-hover:text-green-50 transition-colors transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
-                  <ShieldCheck size={120} />
+                {/* Visual Flair Background */}
+                <div className="absolute -bottom-6 -right-6 text-white/5 group-hover:text-green-500/10 transition-colors transform translate-y-4 group-hover:translate-y-0 transition-all duration-700">
+                  <ShieldCheck size={140} />
                 </div>
               </div>
             ))}
@@ -412,8 +413,8 @@ const App: React.FC = () => {
                 Premium pest management solutions since 2012. Trusted by over 10,000 residential and commercial clients across Bengaluru.
               </p>
               <div className="flex space-x-6">
-                <a href="#" className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-white/10 transition-all"><Star size={20} className="text-amber-400" fill="currentColor" /></a>
-                <a href="#" className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-white/10 transition-all"><Award size={20} className="text-green-400" /></a>
+                <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-white/10 transition-all cursor-default"><Star size={20} className="text-amber-400" fill="currentColor" /></div>
+                <div className="w-12 h-12 bg-white/5 rounded-2xl flex items-center justify-center hover:bg-white/10 transition-all cursor-default"><Award size={20} className="text-green-400" /></div>
               </div>
             </div>
 
@@ -426,7 +427,7 @@ const App: React.FC = () => {
                   </div>
                   <div>
                     <span className="block text-xs font-black uppercase tracking-widest text-slate-500 mb-1">Call Darshan N G</span>
-                    <span className="text-xl font-black">{DARSHAN_CONTACT.phone}</span>
+                    <span className="text-xl font-black tracking-tight">{DARSHAN_CONTACT.phone}</span>
                   </div>
                 </a>
                 <a href={`mailto:${DARSHAN_CONTACT.email}`} className="flex items-center space-x-6 group">
@@ -435,7 +436,7 @@ const App: React.FC = () => {
                   </div>
                   <div>
                     <span className="block text-xs font-black uppercase tracking-widest text-slate-500 mb-1">Official Email</span>
-                    <span className="text-xl font-black">{DARSHAN_CONTACT.email}</span>
+                    <span className="text-xl font-black tracking-tight">{DARSHAN_CONTACT.email}</span>
                   </div>
                 </a>
               </div>

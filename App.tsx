@@ -1,21 +1,15 @@
-
 import React, { useState, useEffect } from 'react';
 import { 
   Phone, 
   MessageCircle, 
   Calendar, 
-  MapPin, 
   Mail, 
   ShieldCheck, 
   CheckCircle2, 
-  UserCircle,
   Clock,
   Menu,
   X,
   ArrowRight,
-  Info,
-  Home,
-  Zap,
   Star,
   ChevronRight,
   Award
@@ -50,6 +44,7 @@ const App: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setFormSubmitted(true);
+    // Logic for sending lead would go here
     setTimeout(() => setFormSubmitted(false), 5000);
   };
 
@@ -59,7 +54,7 @@ const App: React.FC = () => {
     <div className="min-h-screen bg-white text-slate-900 selection:bg-green-100 selection:text-green-900">
       
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-lg shadow-lg py-3' : 'bg-transparent py-6'}`}>
+      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-lg shadow-lg py-3' : 'bg-transparent py-6'}`}>
         <div className="max-w-7xl mx-auto px-6 lg:px-12">
           <div className="flex justify-between items-center">
             <div className="flex flex-col">
@@ -262,10 +257,10 @@ const App: React.FC = () => {
 
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {SERVICES.map((service) => (
-              <div key={service.id} className="group relative bg-white/5 border border-white/10 p-8 rounded-[2.5rem] hover:bg-white hover:border-white hover:-translate-y-2 hover:shadow-[0_20px_50px_rgba(0,0,0,0.15)] transition-all duration-500 overflow-hidden cursor-default">
+              <div key={service.id} className="group relative bg-white/5 border border-white/10 p-8 rounded-[2.5rem] hover:bg-white hover:border-white hover:-translate-y-2 hover:shadow-2xl transition-all duration-500 overflow-hidden cursor-default">
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-green-500/10 rounded-2xl flex items-center justify-center text-green-400 mb-8 group-hover:bg-green-600 group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_0_20px_rgba(34,197,94,0.4)] transition-all duration-500 transform">
-                    <div className="transition-transform duration-500 group-hover:scale-110">
+                  <div className="w-16 h-16 bg-green-500/10 rounded-2xl flex items-center justify-center text-green-400 mb-8 transition-all duration-500 group-hover:bg-green-600 group-hover:text-white group-hover:scale-110 group-hover:shadow-[0_10px_30px_-5px_rgba(34,197,94,0.6)] group-hover:drop-shadow-[0_0_15px_rgba(34,197,94,0.3)]">
+                    <div className="transition-transform duration-500 group-hover:rotate-3">
                       {service.icon}
                     </div>
                   </div>
@@ -460,6 +455,9 @@ const App: React.FC = () => {
           <div className="mt-32 pt-16 border-t border-white/5 text-center">
             <p className="text-xs font-bold text-slate-500 uppercase tracking-[0.4em]">
               © {new Date().getFullYear()} SECURE INDIA PEST CONTROL PVT LTD • BENGALURU
+            </p>
+            <p className="mt-4 text-[10px] text-slate-600 font-medium">
+              This is a sales coordination portal managed by Darshan N G. For official corporate compliance matters, please contact SIPC India headquarters.
             </p>
           </div>
         </div>

@@ -10,17 +10,23 @@
       body {
         font-family: 'Plus Jakarta Sans', sans-serif;
         scroll-behavior: smooth;
+        -webkit-font-smoothing: antialiased;
       }
       .bg-dot-pattern {
-        background-image: radial-gradient(#e2e8f0 1px, transparent 1px);
-        background-size: 24px 24px;
+        background-image: radial-gradient(#e2e8f0 1.5px, transparent 1.5px);
+        background-size: 30px 30px;
+      }
+      .glass-card {
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(226, 232, 240, 0.8);
       }
       @keyframes float {
         0%, 100% { transform: translateY(0); }
         50% { transform: translateY(-10px); }
       }
       .animate-float {
-        animation: float 3s ease-in-out infinite;
+        animation: float 4s ease-in-out infinite;
       }
     </style>
     <script type="importmap">
@@ -35,7 +41,7 @@
 }
 </script>
   </head>
-  <body class="bg-slate-50">
+  <body class="bg-slate-50 text-slate-900">
     <div id="root"></div>
   </body>
 </html>
